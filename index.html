@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data Dosen - 02TPLE015</title>
+    <link rel="icon" type="image/png" href="images/logo.png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* VS CODE COLOR PALETTE */
+      :root {
+        --bg-main: #1e1e1e; /* Background utama */
+        --bg-secondary: #252526; /* Background card/sidebar */
+        --vscode-blue: #007acc; /* Biru VS Code */
+        --vscode-light-blue: #4fc1ff; /* Biru muda teks */
+        --vscode-green: #6a9955; /* Hijau komentar */
+        --text-main: #d4d4d4; /* Teks abu-abu terang */
+        --white: #ffffff;
+        --border: #3c3c3c;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background-color: var(--bg-main);
+        color: var(--text-main);
+        font-family: "Fira Code", monospace; /* Font Monospace */
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+
+      .container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      /* HEADER & LOGO VEKTOR */
+      header {
+        text-align: center;
+        padding: 40px 0;
+        animation: fadeIn 1.2s ease-out;
+      }
+
+      /* Re-design Logo Vektor (SVG) */
+      .logo-box {
+        width: 150px;
+        height: 150px;
+        margin: 0 auto 20px;
+        transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        cursor: pointer;
+      }
+
+      .logo-box:hover {
+        transform: scale(1.1) rotate(5deg);
+      }
+
+      /* LAYOUT BERDASARKAN GAMBAR SKETSA */
+      .section-box {
+        background: var(--bg-secondary);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        padding: 25px;
+        margin-bottom: 30px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        transition: 0.3s;
+      }
+
+      .section-box:hover {
+        border-color: var(--vscode-blue);
+        box-shadow: 0 10px 40px rgba(0, 122, 204, 0.2);
+      }
+
+      h2 {
+        color: var(--vscode-light-blue);
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+        border-bottom: 1px solid var(--border);
+        padding-bottom: 10px;
+        display: flex;
+        align-items: center;
+      }
+
+      h2::before {
+        content: "const ";
+        color: var(--vscode-blue);
+        font-size: 0.9rem;
+        margin-right: 8px;
+      }
+
+      /* GRID UNTUK INFO MAHASISWA */
+      .info-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+      }
+
+      .info-item {
+        background: rgba(255, 255, 255, 0.03);
+        padding: 15px;
+        border-radius: 4px;
+        border-left: 3px solid var(--vscode-blue);
+      }
+
+      .label {
+        color: var(--vscode-blue);
+        font-size: 0.8rem;
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      .value {
+        color: var(--white);
+        font-weight: 600;
+      }
+
+      /* BUTTON INTERAKTIF */
+      .btn-contact {
+        background: transparent;
+        color: var(--vscode-light-blue);
+        border: 1px solid var(--vscode-light-blue);
+        padding: 10px 20px;
+        font-family: "Fira Code", monospace;
+        cursor: pointer;
+        border-radius: 4px;
+        margin-top: 15px;
+        transition: 0.3s;
+      }
+
+      .btn-contact:hover {
+        background: var(--vscode-blue);
+        color: white;
+        border-color: var(--vscode-blue);
+      }
+
+      /* RESPONSIVE DESIGN */
+      @media (max-width: 768px) {
+        .info-grid {
+          grid-template-columns: 1fr; /* Stack kebawah di HP/Tab */
+        }
+
+        header h1 {
+          font-size: 1.2rem;
+        }
+      }
+
+      /* ANIMASI */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      footer {
+        text-align: center;
+        padding: 40px;
+        font-size: 0.8rem;
+        color: var(--vscode-green);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="logo-box" onclick="showAlert()">
+          <img
+            src="images/logo.png"
+            alt="Logo 02TPLE015 Informatics Engineering"
+            width="150"
+            height="150"
+            style="
+              width: 100%;
+              height: 100%;
+              object-fit: contain;
+              display: block;
+            "
+            decoding="async"
+            loading="eager"
+          />
+        </div>
+        <h1>Teknik Informatika</h1>
+        <p style="color: var(--vscode-green)">// Welcome to our Website</p>
+      </header>
+
+      <section class="section-box">
+        <h2>Dosen Kelas</h2>
+        <p>
+          Kode Kelas:
+          <span style="color: var(--vscode-light-blue)">02TPLE015</span>
+        </p>
+      </section>
+
+      <section class="section-box">
+        <h2>Dosen_Info</h2>
+        <div class="info-grid">
+          <div class="info-item">
+            <span class="label">Nama_lengkap</span>
+            <span class="value">Ahmad Dani (Contoh)</span>
+          </div>
+          <div class="info-item">
+            <span class="label">nind_nim</span>
+            <span class="value">231011400000</span>
+          </div>
+          <div class="info-item">
+            <span class="label">Nomor_Telepon</span>
+            <span class="value">081264940577</span>
+          </div>
+          <div class="info-item">
+            <span class="label">Mata_kuliah</span>
+            <span class="value">Pemrograman Web</span>
+          </div>
+        </div>
+        <button class="btn-contact" onclick="contactMe()">Hubungi Saya</button>
+      </section>
+
+      <footer>
+        <p>© 2026 Informatics Engineering - Built with Tailwind CSS</p>
+      </footer>
+    </div>
+
+    <script>
+      // Fungsi Alert Interaktif
+      function showAlert() {
+        alert(
+          "🚀 Logo diklik! Ini adalah Logo Vektor SVG yang tidak akan pecah meski diperbesar.",
+        );
+      }
+
+      function contactMe() {
+        window.open(
+          "https://wa.me/6281264940577?text=Assalamualaikum%20Bapak%2FIbu%20perkenalkan%20saya%20[nama anda]%20dari%20kelas%2002TPLE015",
+        );
+      }
+
+      // Efek Log di Console (seperti developer sungguhan)
+      console.log(
+        "%c System Status: Online",
+        "color: #6a9955; font-weight: bold; font-size: 12px;",
+      );
+      console.log("%c Layout: Responsive Enabled", "color: #007acc;");
+    </script>
+  </body>
+</html>
