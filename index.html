@@ -96,31 +96,89 @@
         margin-right: 8px;
       }
 
-      /* GRID UNTUK INFO MAHASISWA */
-      .info-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-      }
+      /* GRID UNTUK INFO DOSEN */
+        .dosen-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
 
-      .info-item {
-        background: rgba(255, 255, 255, 0.03);
-        padding: 15px;
-        border-radius: 4px;
-        border-left: 3px solid var(--vscode-blue);
-      }
+        .dosen-card {
+            background: rgba(255,255,255,0.03);
+            padding: 20px;
+            border-radius: 4px;
+            border-left: 3px solid var(--vscode-blue);
+            transition: 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
 
-      .label {
-        color: var(--vscode-blue);
-        font-size: 0.8rem;
-        display: block;
-        margin-bottom: 5px;
-      }
+        .dosen-card:hover {
+            background: rgba(255,255,255,0.06);
+            transform: translateY(-5px);
+        }
 
-      .value {
-        color: var(--white);
-        font-weight: 600;
-      }
+        .dosen-card::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(45deg, transparent 50%, rgba(0, 122, 204, 0.1) 50%);
+        }
+
+        .info-row {
+            margin-bottom: 12px;
+        }
+
+        .label {
+            color: var(--vscode-blue);
+            font-size: 0.75rem;
+            display: block;
+            margin-bottom: 2px;
+            opacity: 0.8;
+        }
+
+        .value {
+            color: var(--white);
+            font-weight: 500;
+            font-size: 0.95rem;
+            word-break: break-word;
+        }
+
+        .subject-tag {
+            display: inline-block;
+            background: rgba(79, 193, 255, 0.1);
+            color: var(--vscode-light-blue);
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            margin-top: 10px;
+            border: 1px solid rgba(79, 193, 255, 0.2);
+        }
+
+        .btn-wa {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: transparent;
+            color: var(--vscode-green);
+            border: 1px solid var(--vscode-green);
+            padding: 8px 15px;
+            font-family: 'Fira Code', monospace;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-top: 15px;
+            font-size: 0.8rem;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .btn-wa:hover {
+            background: var(--vscode-green);
+            color: white;
+        }
 
       /* BUTTON INTERAKTIF */
       .btn-contact {
@@ -204,26 +262,152 @@
       </section>
 
       <section class="section-box">
-        <h2>Dosen_Info</h2>
-        <div class="info-grid">
-          <div class="info-item">
-            <span class="label">Nama_lengkap</span>
-            <span class="value">Ahmad Dani (Contoh)</span>
+        <h2>Dosen_List</h2>
+        <div class="dosen-grid">
+          <!-- Dosen 1 -->
+          <div class="dosen-card">
+            <div class="info-row">
+              <span class="label">Nama_Lengkap</span>
+              <span class="value">Munawaroh, S.Kom., M.Kom.</span>
+            </div>
+            <div class="info-row">
+              <span class="label">NIDN</span>
+              <span class="value">402089004</span>
+            </div>
+            <div class="subject-tag">KALKULUS II</div>
+            <a href="https://wa.me/628993979903?text=Assalamualaikum%20Bapak/Ibu%20saya%20[nama%20anda]%20dari%20kelas%2002TPLE015" target="_blank" class="btn-wa">
+              <span>Hubungi</span>
+            </a>
           </div>
-          <div class="info-item">
-            <span class="label">nind_nim</span>
-            <span class="value">231011400000</span>
+
+          <!-- Dosen 2 -->
+          <div class="dosen-card">
+            <div class="info-row">
+              <span class="label">Nama_Lengkap</span>
+              <span class="value">Dimas Abisono Punkastyo, S.Kom., M.Kom.</span>
+            </div>
+            <div class="info-row">
+              <span class="label">NIDN</span>
+              <span class="value">402118602</span>
+            </div>
+            <div class="subject-tag">KOMPUTER DAN MASYARAKAT</div>
+            <a href="https://wa.me/6285939563546?text=Assalamualaikum%20Bapak/Ibu%20saya%20[nama%20anda]%20dari%20kelas%2002TPLE015" target="_blank" class="btn-wa">
+              <span>Hubungi</span>
+            </a>
           </div>
-          <div class="info-item">
-            <span class="label">Nomor_Telepon</span>
-            <span class="value">081264940577</span>
+
+          <!-- Dosen 3 -->
+          <div class="dosen-card">
+            <div class="info-row">
+              <span class="label">Nama_Lengkap</span>
+              <span class="value">Rajin Nahampun S.kom., M.kom.</span>
+            </div>
+            <div class="info-row">
+              <span class="label">NIDN</span>
+              <span class="value">8638758659130152</span>
+            </div>
+            <div class="subject-tag">KOMPUTER GRAFIK</div>
+            <a href="https://wa.me/6287731233665?text=Assalamualaikum%20Bapak/Ibu%20saya%20[nama%20anda]%20dari%20kelas%2002TPLE015" target="_blank" class="btn-wa">
+              <span>Hubungi</span>
+            </a>
           </div>
-          <div class="info-item">
-            <span class="label">Mata_kuliah</span>
-            <span class="value">Pemrograman Web</span>
+
+          <!-- Dosen 4 -->
+          <div class="dosen-card">
+            <div class="info-row">
+              <span class="label">Nama_Lengkap</span>
+              <span class="value">Okta Irawati, S.Kom., M.Kom.</span>
+            </div>
+            <div class="info-row">
+              <span class="label">NIDN</span>
+              <span class="value">428109401</span>
+            </div>
+            <div class="subject-tag">SISTEM OPERASI</div>
+            <a href="https://wa.me/6285887400106?text=Assalamualaikum%20Bapak/Ibu%20saya%20[nama%20anda]%20dari%20kelas%2002TPLE015" target="_blank" class="btn-wa">
+              <span>Hubungi</span>
+            </a>
+          </div>
+
+          <!-- Dosen 5 -->
+          <div class="dosen-card">
+            <div class="info-row">
+              <span class="label">Nama_Lengkap</span>
+              <span class="value">Debby Rahadian Baskhara, S.T., M.Kom.</span>
+            </div>
+            <div class="info-row">
+              <span class="label">NIDN</span>
+              <span class="value">410129201</span>
+            </div>
+            <div class="subject-tag">KOMUNIKASI DATA</div>
+            <a href="https://wa.me/628561242123?text=Assalamualaikum%20Bapak/Ibu%20saya%20[nama%20anda]%20dari%20kelas%2002TPLE015" target="_blank" class="btn-wa">
+              <span>Hubungi</span>
+            </a>
+          </div>
+
+          <!-- Dosen 6 -->
+          <div class="dosen-card">
+            <div class="info-row">
+              <span class="label">Nama_Lengkap</span>
+              <span class="value">SUPANDRI S.H., M.H.</span>
+            </div>
+            <div class="info-row">
+              <span class="label">NIDN</span>
+              <span class="value">344770671130163</span>
+            </div>
+            <div class="subject-tag">PENDIDIKAN KEWARGANEGARAAN</div>
+            <span class="btn-wa" style="border-color: #3c3c3c; color: #888; cursor: default;">
+              <span>No Contact</span>
+            </span>
+          </div>
+
+          <!-- Dosen 7 -->
+          <div class="dosen-card">
+            <div class="info-row">
+              <span class="label">Nama_Lengkap</span>
+              <span class="value">Khaerul Ma'mur, S.Kom., M.Kom.</span>
+            </div>
+            <div class="info-row">
+              <span class="label">NIDN</span>
+              <span class="value">415039001</span>
+            </div>
+            <div class="subject-tag">PENGANTAR APLIKASI KOMPUTER</div>
+            <a href="https://wa.me/6285642523264?text=Assalamualaikum%20Bapak/Ibu%20saya%20[nama%20anda]%20dari%20kelas%2002TPLE015" target="_blank" class="btn-wa">
+              <span>Hubungi</span>
+            </a>
+          </div>
+
+          <!-- Dosen 8 -->
+          <div class="dosen-card">
+            <div class="info-row">
+              <span class="label">Nama_Lengkap</span>
+              <span class="value">Kasih, S.Pd., M.Pd.</span>
+            </div>
+            <div class="info-row">
+              <span class="label">NIDN</span>
+              <span class="value">414117803</span>
+            </div>
+            <div class="subject-tag">BAHASA INDONESIA</div>
+            <a href="https://wa.me/6281953970045?text=Assalamualaikum%20Bapak/Ibu%20saya%20[nama%20anda]%20dari%20kelas%2002TPLE015" target="_blank" class="btn-wa">
+              <span>Hubungi</span>
+            </a>
+          </div>
+
+          <!-- Dosen 9 -->
+          <div class="dosen-card">
+            <div class="info-row">
+              <span class="label">Nama_Lengkap</span>
+              <span class="value">Nahoras Bona Simarmata, S.S., M.Hum.</span>
+            </div>
+            <div class="info-row">
+              <span class="label">NIDN</span>
+              <span class="value">407118601</span>
+            </div>
+            <div class="subject-tag">INTERMEDIATE ACADEMIC ENGLISH</div>
+            <a href="https://wa.me/6285261728809?text=Assalamualaikum%20Bapak/Ibu%20saya%20[nama%20anda]%20dari%20kelas%2002TPLE015" target="_blank" class="btn-wa">
+              <span>Hubungi</span>
+            </a>
           </div>
         </div>
-        <button class="btn-contact" onclick="contactMe()">Hubungi Saya</button>
       </section>
 
       <footer>
